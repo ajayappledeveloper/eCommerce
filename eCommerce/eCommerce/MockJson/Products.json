@@ -1,0 +1,44 @@
+{
+    "products": [
+        {
+            "title": "Face Mask",
+            "detail": "Face Mask that covers and protects from UV all day long, Face Mask that covers and protects from UV all day long, Face Mask that covers and protects from UV all day long. Face Mask that covers and protects from UV all day long",
+            "id": 1,
+            "price": "25",
+            "image": "facemask",
+            "currency": "INR"
+        },
+        {
+            "title": "Bandage",
+            "detail": "First class bandage to heal your injuries safely",
+            "id": 2,
+            "price": "15",
+            "image": "bandage",
+            "currency": "INR"
+        },
+        {
+            "title": "Pills",
+            "detail": "Can wait to be cured? try this quickly",
+            "id": 3,
+            "price": "15",
+            "image": "pills",
+            "currency": "INR"
+        },
+        {
+            "title": "Bed",
+            "detail": "Comfort and Pleasant sleep anytime",
+            "id": 4,
+            "price": "2000",
+            "image": "bed.double",
+            "currency": "INR"
+        },
+        {
+            "title": "Allergens",
+            "detail": "taking care always",
+            "id": 5,
+            "price": "250",
+            "image": "allergens",
+            "currency": "INR"
+        }
+    ]
+}
