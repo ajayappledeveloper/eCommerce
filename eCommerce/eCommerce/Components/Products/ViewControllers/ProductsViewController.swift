@@ -56,7 +56,7 @@ class ProductsViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -83,7 +83,7 @@ class ProductsViewController: UIViewController {
         NSLayoutConstraint.activate([
             orderButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40),
             orderButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
-            orderButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            orderButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             orderButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         

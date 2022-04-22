@@ -27,6 +27,7 @@ enum StringConstants {
     enum OrderSummary {
         static let orderButtonTitle = "Place Order"
         static let navBarTitie = "Order Summary"
+        static let addresssPlaceholder = "Please add your shipping address..."
     }
     
     enum OrderSuccess {

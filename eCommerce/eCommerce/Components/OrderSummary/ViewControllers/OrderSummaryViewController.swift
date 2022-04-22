@@ -37,6 +37,7 @@ class OrderSummaryViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.keyboardType = .asciiCapable
         view.borderStyle = .roundedRect
+        view.placeholder = StringConstants.OrderSummary.addresssPlaceholder
         view.delegate = self
         return view
     }()
@@ -61,7 +62,7 @@ class OrderSummaryViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
     
     @objc func dismissKeyBoard() {
@@ -78,6 +79,12 @@ class OrderSummaryViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     func configureSubViews() {
         view.addSubview(productsTableView)
         view.addSubview(addressTextField)
@@ -89,12 +96,12 @@ class OrderSummaryViewController: UIViewController {
         NSLayoutConstraint.activate([
             addressTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40),
             addressTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
-            addressTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
+            addressTextField.bottomAnchor.constraint(equalTo: orderButton.topAnchor, constant: -20),
             addressTextField.heightAnchor.constraint(equalToConstant: 50),
             
             orderButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40),
             orderButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
-            orderButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            orderButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             orderButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }

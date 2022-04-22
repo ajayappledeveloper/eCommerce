@@ -64,7 +64,7 @@ class OrderSuccessViewController: UIViewController {
             messageLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
             messageLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
             
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10)
         ])
     }

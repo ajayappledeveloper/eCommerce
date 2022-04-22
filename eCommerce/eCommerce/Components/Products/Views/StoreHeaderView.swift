@@ -98,9 +98,7 @@ class StoreHeaderView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        configureSubViews()
-        
+        fatalError("init(coder:) has not been implemented")
     }
     
     func configureSubViews() {
